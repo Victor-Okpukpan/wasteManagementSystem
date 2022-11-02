@@ -11,11 +11,11 @@ html {
  /* Scroll Bar */
  ::-webkit-scrollbar {
     width: 10px;
-    background-color: var(--background-color-1);
+    background-color: white;
     color: white;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: var(--primary-color);
+    background-color: green;
     border-radius: 10px;
 } 
 
@@ -457,6 +457,7 @@ input[type="checkbox"]:checked ~ .hamburger .line3 {
 
     .home-container .text-wrapper, .home-container .image-wrapper{
         width: 100%;
+        margin-right: 0;
         margin-bottom: 20px;
     }
 
