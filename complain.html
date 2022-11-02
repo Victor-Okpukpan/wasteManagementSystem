@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+    <title>Call our attention</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("JmFoSTpNTEAWdH1GH");
+    })();
+</script>
+</head>
+<body>
+    <nav class="contact-navigation">
+        <ul>
+            <li><a href="./index.html">Back To Home</a></li>
+        </ul>
+    </nav>
+    <div class="form-container">
+        <form action="submit" method="POST" class="complain-form">
+            <div class="form-row">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-row">
+                <label for="number">Mobile:</label>
+                <input type="tel" name="number" id="number" placeholder="Enter Your Phone Number" required>
+            </div>
+
+            <div class="form-row">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Enter Your Email">
+            </div>
+
+            <div class="form-row">
+                <label for="">Category:</label>
+                <input type="checkbox" name="category" id="organic">Organic
+                <input type="checkbox" name="category" id="inorganic">Inorganic
+                <input type="checkbox" name="category" id="metallic">Metallic
+                <input type="checkbox" name="category" id="all" checked>All
+            </div>
+
+            <div class="form-row">
+                <label for="location">Location</label>
+                <select name="location" id="location">
+                    <option value="Uniuyo Permanent Site">Uniuyo Permanent Site</option>
+                    <option value="Uniuyo Town Campus">Uniuyo Town Campus</option>
+                    <option value="Uniuyo Annex">Uniuyo Annex</option>
+                </select>
+                <textarea name="ldetails" id="ldetails" placeholder="Enter Location Details"></textarea>
+            </div>
+
+            <input type="submit" value="Send Complain">
+        </form>
+    </div>
+</body>
+</html>

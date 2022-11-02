@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact Us</title>
+    <script src="./contact.js" defer></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("JmFoSTpNTEAWdH1GH");
+    })();
+</script>
+</head>
+<body>
+    <nav class="contact-navigation">
+        <ul>
+            <li><a href="./index.html">Back To Home</a></li>
+        </ul>
+    </nav>
+    <div class="contact-form-container flex-row">
+        <form action="submit" method="POST" id="contact-form">
+            <div class="form-row">
+                <input type="text" name="fname" id="fname" placeholder="First Name *" required>
+            </div>
+
+            <div class="form-row">
+                <input type="text" name="lname" id="lname" placeholder="Last Name *" required>
+            </div>
+
+            <div class="form-row">
+                <input type="email" name="contact_email" id="contact_email" placeholder="Email *" required>
+            </div>
+
+            <div class="form-row">
+                <input type="tel" name="phone_number" id="phone_number" placeholder="Phone *" required>
+            </div>
+
+            <div class="form-row">
+                <textarea name="message_container" id="message" placeholder="Type your message here *" required></textarea>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="contact-info">
+            <div class="details">
+                <h2>Call</h2>
+                <p>12344556789</p>
+            </div>
+                
+            <div class="details">
+                <h2>Email</h2>
+                <p>wastemanagement@uniuyo.edu.ng</p>
+            </div>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
