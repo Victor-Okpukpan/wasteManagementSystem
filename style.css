@@ -243,19 +243,21 @@ ul {
     margin-top: 10px;
 }
 
-.form-container form input[type="submit"], .contact-form-container form input[type="submit"]{
+.form-container form .btn, .contact-form-container form .btn{
     padding: 8px 15px;
-    background-color: #fff;
+    background-color: green;
+    border-color: white;
+    color: white;
+    
     border: 1px solid;
     border-radius: 10px;
     margin-top: 20px;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
-.form-container form input[type="submit"]:hover, .contact-form-container form input[type="submit"]:hover{
-    background-color: green;
-    border-color: white;
-    color: white;
+.form-container form .btn:hover, .contact-form-container form .btn:hover{
+    background-color: #fff;
+    color: black;
 }
 .back{
     position: absolute;
