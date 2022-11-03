@@ -463,8 +463,8 @@ input[type="checkbox"]:checked ~ .hamburger .line3 {
     }
 
     .form-container form{
-        margin-top: 60px;
-        width: 80%;
+        margin: 60px 0 10px 0;
+        width: 95%;
     }
 }
 
