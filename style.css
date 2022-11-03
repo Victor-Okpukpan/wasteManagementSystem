@@ -154,6 +154,18 @@ ul {
     width: 30rem;
 }
 
+.button{
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+.button a {
+    background-color: green;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 24px;
+}
+
 /* FAQ section */
 
 .faq-heading{
@@ -221,6 +233,9 @@ ul {
     box-shadow: 0 1px 4px hsla(0, 0%, 0%, 0.2);
     margin-top: 40px;
 }
+.form-container h1, .contact-form-container h1{
+    text-align: center;
+}
 
 .form-container form label{
     display: block;
@@ -244,7 +259,7 @@ ul {
 }
 
 .form-container form .btn, .contact-form-container form .btn{
-    padding: 8px 15px;
+    padding: 10px 15px;
     background-color: green;
     border-color: white;
     color: white;
@@ -479,12 +494,9 @@ input[type="checkbox"]:checked ~ .hamburger .line3 {
 }
 
 @media only screen and (max-width: 700px){
-    .contact-form-container{
-        flex-direction: column;
-    }
 
     .contact-form-container form{
-        margin-top: 40px;
+        margin-top: 60px;
         width: 100%;
     }
 

@@ -31,7 +31,7 @@ function sendMail(e) {
     const email = document.querySelector("#email");
     const location = document.querySelector("#location");
     const locationDetails = document.querySelector("#ldetails");
-
+    
     let params = {
         from_name: name.value,
         number: number.value,
