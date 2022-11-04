@@ -291,6 +291,10 @@ ul {
     transform: scale(1.05);
 }
 
+.new-col{
+    margin: 0 auto;
+}
+
 /* Contact */
 
 .contact-navigation{
