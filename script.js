@@ -32,6 +32,10 @@ function sendMail(e) {
     const location = document.querySelector("#location");
     const locationDetails = document.querySelector("#ldetails");
 
+    let data = [];
+
+
+
     if(selectedRow == null){
         const list = document.querySelector(".complain-list");
         const row = document.createElement("tr");
@@ -48,6 +52,16 @@ function sendMail(e) {
             </td>
         `;
 
+        data.push({
+            name : name.value,
+            Phone_number : number.value,
+            email : email.value,
+            location : location.value,
+            location_Details : locationDetails.value
+        });
+
+        localStorage.setItem("data", JSON.stringify(data));
+        
         list.appendChild(row);
         selectedRow = null;
         showAlert("Complain Added", "success");
@@ -111,11 +125,11 @@ function showAlert(message, className){
 }
 
 // Add Data
-document.querySelector(".complain-form").addEventListener("submit", (e) => {
-    e.preventDefault();
+// document.querySelector(".complain-form").addEventListener("submit", (e) => {
+//     e.preventDefault();
 
 
-})
+// })
 
 // delete data
 document.querySelector(".complain-list").addEventListener("click", (e) => {
