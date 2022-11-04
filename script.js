@@ -23,7 +23,7 @@ for (i = 0; i < faq.length; i++) {
 
 // Complain Form functunality
 const form = document.querySelector(".complain-form");
-
+var selectedRow = null;
 function sendMail(e) {
     e.preventDefault();
     const name = document.querySelector("#name");
@@ -31,6 +31,36 @@ function sendMail(e) {
     const email = document.querySelector("#email");
     const location = document.querySelector("#location");
     const locationDetails = document.querySelector("#ldetails");
+
+    if(selectedRow == null){
+        const list = document.querySelector(".complain-list");
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${name.value}</td>
+            <td>${number.value}</td>
+            <td>${email.value}</td>
+            <td>${location.value}</td>
+            <td>${locationDetails.value}</td>
+            <td>
+            <a href="#" class="btn btn-warning btn-sm edit">Edit</a>
+            <a href="#" class="btn btn-danger btn-sm delete">Delete</a>
+            </td>
+        `;
+
+        list.appendChild(row);
+        selectedRow = null;
+        showAlert("Complain Added", "success");
+    }
+    else{
+        selectedRow.children[0].textContent = name.value;
+        selectedRow.children[1].textContent = number.value;
+        selectedRow.children[2].textContent = email.value;
+        selectedRow.children[3].textContent = location.value;
+        selectedRow.children[4].textContent = locationDetails.value;
+        selectedRow = null;
+        showAlert("Complain Info Edited", "info")
+    }
     
     let params = {
         from_name: name.value,
@@ -49,8 +79,49 @@ function sendMail(e) {
     email.value = '';
     location.value = '';
     locationDetails.value = '';
-}
+};
 
 form.addEventListener("submit", sendMail);
 
-// Contact form Functionality
+// 
+document.querySelector(".complain-list").addEventListener("click", (e) => {
+    target = e.target;
+    if(target.classList.contains("edit")){
+        selectedRow = target.parentElement.parentElement;
+        document.querySelector("#name").value = selectedRow.children[0].textContent;
+        document.querySelector("#number").value = selectedRow.children[1].textContent;
+        document.querySelector("#email").value = selectedRow.children[2].textContent;
+        document.querySelector("#location").value = selectedRow.children[3].textContent;
+        document.querySelector("#ldetails").value = selectedRow.children[4].textContent;
+    }
+})
+
+
+// Show Alerts
+function showAlert(message, className){
+    const div = document.createElement("div");
+    div.className = `alert alert-${className}`;
+
+    div.appendChild(document.createTextNode(message));
+    const container = document.querySelector(".complain-form");
+    const main = document.querySelector(".main");
+    container.insertBefore(div, main);
+
+    setTimeout(() => document.querySelector(".alert").remove(), 3000)
+}
+
+// Add Data
+document.querySelector(".complain-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+
+})
+
+// delete data
+document.querySelector(".complain-list").addEventListener("click", (e) => {
+    target = e.target;
+    if(target.classList.contains("delete")){
+        target.parentElement.parentElement.remove();
+        showAlert("Complain Data Deleted", "danger")
+    }
+})
