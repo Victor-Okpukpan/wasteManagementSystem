@@ -47,7 +47,6 @@ function sendMail(e) {
             <td>${locationDetails.value}</td>
             <td>
             <a href="#" class="btn btn-warning btn-sm edit">Edit</a>
-            <a href="#" class="btn btn-danger btn-sm delete">Delete</a>
             </td>
         `;
 
@@ -94,7 +93,6 @@ function sendMail(e) {
     name.value = '';
     number.value = '';
     email.value = '';
-    location.value = '';
     locationDetails.value = '';
 };
 
@@ -127,18 +125,15 @@ function showAlert(message, className){
     setTimeout(() => document.querySelector(".alert").remove(), 3000)
 }
 
-// Add Data
-// document.querySelector(".complain-form").addEventListener("submit", (e) => {
-//     e.preventDefault();
-
-
+// delete data
+// document.querySelector(".complain-list").addEventListener("click", (e) => {
+//     target = e.target;
+//     if(target.classList.contains("delete")){
+//         target.parentElement.parentElement.remove();
+//         showAlert("Complain Data Deleted", "danger")
+//     }
 // })
 
-// delete data
-document.querySelector(".complain-list").addEventListener("click", (e) => {
-    target = e.target;
-    if(target.classList.contains("delete")){
-        target.parentElement.parentElement.remove();
-        showAlert("Complain Data Deleted", "danger")
-    }
-})
+            // <td>
+            // <a href="#" class="btn btn-danger btn-sm delete">Delete</a>
+            // </td>
