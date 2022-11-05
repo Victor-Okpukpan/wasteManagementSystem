@@ -35,7 +35,6 @@ function sendMail(e) {
     let data = [];
 
 
-
     if(selectedRow == null){
         const list = document.querySelector(".complain-list");
         const row = document.createElement("tr");
@@ -52,16 +51,20 @@ function sendMail(e) {
             </td>
         `;
 
-        data.push({
-            name : name.value,
-            Phone_number : number.value,
-            email : email.value,
-            location : location.value,
-            location_Details : locationDetails.value
-        });
+        if(typeof(Storage) !== "undefined") {
+            if (localStorage.getItem('data') && localStorage.getItem('data').length > 0)
+                data = JSON.parse(localStorage.getItem('data'));
+            obj = {
+                name : `${name.value}`,
+                Phone_number : `${number.value}`,
+                email : `${email.value}`,
+                location : `${location.value}`,
+                location_Details : `${locationDetails.value}`
+            };
+            data.push(obj);
+            localStorage.setItem('data', JSON.stringify(data));
+        }
 
-        localStorage.setItem("data", JSON.stringify(data));
-        
         list.appendChild(row);
         selectedRow = null;
         showAlert("Complain Added", "success");
